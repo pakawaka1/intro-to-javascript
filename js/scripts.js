@@ -1,98 +1,132 @@
-// const title = document.querySelector('#title');
+// // JS Forms //////////////////////////////////////////////////////////////
 
-// title.innerHTML = '<h1><My Title</h1>'
+// //dot notation
+// console.log(document.forms);
+// //bracket notation
+// console.log(document.forms['loginForm']);
 
-// const title = document.createElement('h1');
-// title.textContent = 'Our Title';
-// document.body.appendChild(title);
+// console.log(document.forms.loginForm.button);
 
-// const list = document.createElement('ul');
-// document.body.appendChild(list);
+// const btn = document.forms.loginForm.button;
 
-// const cat1 = document.createElement('li');
-// cat1.textContent = 'Celestia';
-// cat1.dataset.id = 1;
-// cat1.dataset.title = 'Celestia';
+// btn.addEventListener('click', (event) => {
+//     let firstName = document.forms.loginForm.firstName.value;
 
-// const cat2 = document.createElement('li');
-// cat2.textContent = 'Luna';
+//     event.preventDefault();
+//     console.log(firstName);
+//     console.log('Clicked');
 
-// const cat3 = document.createElement('li');
-// cat3.textContent = 'Tupac';
+//     firstName.value = '';
 
-// list.append(cat1, cat2, cat3);
-
-// const js = document.querySelector('script');
-
-// document.body.insertBefore(title, js);
-// document.body.insertBefore(list, title);
-
-// const button = document.createElement('button');
-// button.textContent = "Submit";
-// button.id = 'my-button';
-// button.className = 'btn btn-success';
-// button.classList.replace('btn-success', 'btn-info');
-// document.body.appendChild(button);
-
-// title.classList.add('text-center');
-
-// // button.classList.remove('btn-info');
-
-// button.addEventListener('click', () => {
-//     title.classList.toggle('hidden');
 // })
 
-// // button.setAttribute('disabled', false);
-// // button.removeAttribute('disabled');
+// this /////////////////////////////////////////
 
-// const hello = document.createElement('h1');
-// hello.textContent = "Hello World!";
-// hello.className = 'text-center';
-// // document.body.appendChild(hello);
+//create an object
+// const person = {
+//     name: 'David',
+//     wife: {
+//         firstName: 'Meera',
+//         lastName: 'Bhatt',
+//         age: 35,
+//         howOld() {
+//             console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`);
+//         }
+//     }
+//     person.howOld();
+//     person.wife.howOld();
 
-// const nice = document.createElement('p');
-// nice.textContent = "Bacon ipsum dolor amet spare ribs ham bresaola, shoulder strip steak meatball short ribs short loin chuck tongue bacon chicken. Kevin pork chop ham hock shoulder flank beef ribs porchetta bacon shankle brisket. Shoulder leberkas frankfurter rump drumstick jerky flank prosciutto jowl ham tenderloin. Filet mignon meatball meatloaf, boudin chuck landjaeger salami turducken short loin. Filet mignon beef meatloaf tongue pork loin kevin salami. Pork chop pig short ribs corned beef biltong tongue, jowl short loin hamburger doner. Bacon jowl short loin turducken."
-// nice.className = 'col-md-8 offset-md-2';
-// // document.body.appendChild(nice);
+// const btn1 = document.querySelector('#btn1');
+// const btn2 = document.querySelector('#btn2');
 
-// const footer = document.createElement('footer');
-// footer.textContent = 'Friend us on Fb';
-// footer.className = 'text-center';
-// // document.body.appendChild(footer);
+// btn1.addEventListener('click', function() {
+//     event.preventDefault();
 
-// document.body.append(hello, nice, footer);
+//     this.style.display = 'none';
+//     console.log(this);
+// });
 
-// FizzBuzz
+// btn1.addEventListener('click', logThis);
+// btn2.addEventListener('click', logThis);
 
+// function logThis() {
+//     console.log(this)
+// }
 
-// 1)  Loop between 2 numbers (typically 0-100);
-// 2)  If number is a multiple of 3, log "Fizz";
-// 3)  if number is a multiple of 5, log "Buzz";
-// 4)  If number is a multiple of 3 and 5, log "FizzBuzz";
-// 5) If none of these multiples, then log the number;
+// sayName() {
+//     console.log(this);
+//     console.log(this.name);
 
-function fizzBuzz(min, max) {
-    const p = document.createElement('p');
-    for (let i = min; i <= max; i++) {
-        if (i % 3 === 0 && i % 5 === 0) {
-            console.log(i, 'FizzBuzz');
-            p.textContent = `${i} FizzBuzz`;
-        } else if (i % 3 === 0) {
-            console.log(i, 'fizz');
-            p.textContent = `${i} fizz`;
-        } else if (i % 5 === 0) {
-            console.log(i, 'Buzz');
-            p.textContent = `${i} Buzz`;
-        } else {
-            console.log(i);
-            p.textContent = `${i}`;
-        }
-        document.body.appendChild(p);
+//     }
+// },
 
-    }
+// sayName() {
+//     console.log(this.name);
+
+// const buttons = document.querySelectorAll('button');
+// console.log('buttons', buttons);
+
+// buttons.forEach(button => button.addEventListener('click', function() {
+//     this.style.display= 'none';
+// })
+// );
+
+// for(let button of buttons) {
+//     button.addEventListener('click', function () {
+//         this.style.display = 'block';
+//     })
+// }
+
+// const dog = {
+//   name: 'Fido',
+//   says: 'Woof'
+// };
+
+// const cat = {
+//   name: 'She-Ra',
+//   says: 'Meow'
+// };
+
+// const baldeagle = {
+//   name: 'Freedom',
+//   says: 'America.....fuck yeah!!'
+// };
+
+// function speak() {
+//   alert(`${this.name} says: ${this.says}`);
+// }
+// console.log(this);
+
+// const dogSays = speak.bind(dog);
+// dogSays();
+
+// const catSays = speak.bind(cat);
+// catSays();
+
+// const baldeaeaglesays = speak.bind(baldeagle);
+// baldeaglesays();
+
+// function speak(location, status) {
+//     alert(`${this.name} says: ${this.says} from ${this.location} ${status}`);
+
+// }
+// speak.apply(baldeagle, ['the mountainside', 'and hates communism']);
+// speak.apply(dog, ['the mountainside', 'and hates communism']);
+// speak.apply(cat, ['the mountainside', 'and hates communism']);
+
+class Person {
+  constructor(name, age, favColor) {
+    this.name = name;
+    this.age = age;
+    this.favColor = favColor;
+  }
+
+  sayName() {
+    console.log(this.name);
+  }
 }
+const ben = new Person('Ben', 29, 'pink');
+const david = new Person('David', 40, 'blue');
 
-fizzBuzz(1, 100);
-
-
-
+ben.sayName();
+david.sayName();
