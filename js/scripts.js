@@ -31,6 +31,14 @@
 
 
 
+
+
+
+
+
+
+
+
 //Set Interval and Stop Interval Methods
 // Example:
 
@@ -58,9 +66,36 @@
 
 
 
+// Storing Values
 
 
 
+const username = prompt("What is your username?");
+console.log(username);
+const password = prompt ("What is your password?");
+console.log(password);
+
+
+function mySetItem() {     
+    localStorage.user = username;
+    sessionStorage.user = username;
+
+};
+
+function myGetItem() {
+    // const userValue = alert(localStorage.getItem('user'));
+    const userValue = alert(sessionStorage.getItem('user'));
+
+// }; 
+}
+  
+
+function myRemoveItem() {
+    // const clearValue = localStorage.removeItem('user');
+    const clearValue = sessionStorage.removeItem('user');
+
+    console.log(clearValue);
+};
 
 
 // // Immediately Invoked Function Expressions (IFFE)
