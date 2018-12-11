@@ -1,104 +1,58 @@
-// // // Set and Clear Timeout 
+// const newPrompt = +prompt('How much time would you like to wait in seconds?')*1000;
+// const timer =setTimeout(quote, newPrompt);
 
-// const newPrompt = prompt("How much time would you like to wait (in milliseconds)?");
-// console.log(newPrompt);
-// const timer = setTimeout(quote, newPrompt);
+// const intervalPrompt = +prompt('How many times do you want the message to appear?')*1000;
+// const setTime = setInterval(quote, intervalPrompt);
 
-
-
-// function quote() {
-//     alert('Hello World.....')
-// };
-
+// function quote () {
+//     const random = alert(Math.random().toString(27).substring(2,15));
+// }
 // function endQuote() {
 //     clearTimeout(timer);
-//     console.log(quote, newPrompt);
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Set Interval and Stop Interval Methods
-// Example:
-
-// const setTime = setInterval(myTimer, 1000);
-
-// function myTimer() {
-//     const date = new Date();
-//     const time = date.toLocaleTimeString();
-//     document.getElementById("clock").innerHTML = time;
 // }
 
 // function myStopFunction() {
 //     clearInterval(setTime);
 // }
 
+const username = prompt('What is your username');
+const password = prompt('What is your password?');
 
+function mySetItem() {
+    sessionStorage.setItem('user', username);
+    sessionStorage.password = password;
+    console.log(password);
+ }
 
+ function myGetItem() {
+     const userValue = alert(sesssionStorage.getItem('user'))
+    // alert(localStorage.user);
+    // alert(localStorage.getItem('password'));
+ }
 
+function myClearItem() {
+   console.log(sessionStorage.removeItem('user'));
+   console.log(sessionStorage.removeItem('password'));
 
-
-
-
-
-
-
-
-
-// Storing Values
-
-
-
-const username = prompt("What is your username?");
-console.log(username);
-const password = prompt ("What is your password?");
-console.log(password);
-
-
-function mySetItem() {     
-    localStorage.user = username;
-    sessionStorage.user = username;
-
-};
-
-function myGetItem() {
-    // const userValue = alert(localStorage.getItem('user'));
-    const userValue = alert(sessionStorage.getItem('user'));
-
-// }; 
 }
-  
-
-function myRemoveItem() {
-    // const clearValue = localStorage.removeItem('user');
-    const clearValue = sessionStorage.removeItem('user');
-
-    console.log(clearValue);
-};
 
 
-// // Immediately Invoked Function Expressions (IFFE)
-// (function() {
-//     console.log('whatever'):
-// }); 
+// var v = 1;
+//     var getValue = (function(x) {
+//         return function() {
+//             alert(x);
+//         };
+//     }(v));
+//     v = 2;
+
+//      getValue();
+
+(function () {
+    const foo = 'Are you sure about this?';
+    alert(foo);
+    // console.log(foo);
+    
+})();
+
+console.log(foo);
+
